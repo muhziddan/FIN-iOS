@@ -11,9 +11,11 @@ struct SplashRouter {
     
     static func showView() -> SplashVC {
         let router = SplashRouter()
-        let presenter = SplashPresenter(router: router)
+        let interactor = SplashInteractor()
+        let presenter = SplashPresenter(router: router, interactor: interactor)
         let view = SplashVC(presenter: presenter)
         presenter.view = view
+        interactor.presenter = presenter
         
         return view
     }

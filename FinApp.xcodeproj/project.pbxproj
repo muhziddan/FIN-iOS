@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5509D7B52C5930AF00B326C6 /* WelcomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7B42C5930AF00B326C6 /* WelcomeScreenVC.swift */; };
+		5509D7B72C5930B900B326C6 /* WelcomeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7B62C5930B900B326C6 /* WelcomeScreenRouter.swift */; };
+		5509D7B92C5930C600B326C6 /* WelcomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7B82C5930C600B326C6 /* WelcomeScreenPresenter.swift */; };
+		5509D7BB2C5931A700B326C6 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7BA2C5931A700B326C6 /* SplashInteractor.swift */; };
 		55A2741E2C58CAEF009B0334 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2741D2C58CAEF009B0334 /* AppDelegate.swift */; };
 		55A274202C58CAEF009B0334 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2741F2C58CAEF009B0334 /* SceneDelegate.swift */; };
 		55A274272C58CAF1009B0334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A274262C58CAF1009B0334 /* Assets.xcassets */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5509D7B42C5930AF00B326C6 /* WelcomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVC.swift; sourceTree = "<group>"; };
+		5509D7B62C5930B900B326C6 /* WelcomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenRouter.swift; sourceTree = "<group>"; };
+		5509D7B82C5930C600B326C6 /* WelcomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenPresenter.swift; sourceTree = "<group>"; };
+		5509D7BA2C5931A700B326C6 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		55A2741A2C58CAEF009B0334 /* FinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A2741D2C58CAEF009B0334 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A2741F2C58CAEF009B0334 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5509D7B32C59306C00B326C6 /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5509D7B42C5930AF00B326C6 /* WelcomeScreenVC.swift */,
+				5509D7B62C5930B900B326C6 /* WelcomeScreenRouter.swift */,
+				5509D7B82C5930C600B326C6 /* WelcomeScreenPresenter.swift */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
 		55A274112C58CAEF009B0334 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +93,7 @@
 		55A274312C58CBF0009B0334 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5509D7B32C59306C00B326C6 /* WelcomeScreen */,
 				55A274322C58CC02009B0334 /* Splash */,
 			);
 			path = Modules;
@@ -86,6 +105,7 @@
 				55A274352C58CCFD009B0334 /* SplashRouter.swift */,
 				55A274332C58CCF4009B0334 /* SplashVC.swift */,
 				55A274372C58CD0D009B0334 /* SplashPresenter.swift */,
+				5509D7BA2C5931A700B326C6 /* SplashInteractor.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -186,10 +206,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A274362C58CCFD009B0334 /* SplashRouter.swift in Sources */,
+				5509D7B72C5930B900B326C6 /* WelcomeScreenRouter.swift in Sources */,
 				55A2743D2C58CDAD009B0334 /* BasePresenter.swift in Sources */,
 				55A274342C58CCF4009B0334 /* SplashVC.swift in Sources */,
 				55A2741E2C58CAEF009B0334 /* AppDelegate.swift in Sources */,
+				5509D7B92C5930C600B326C6 /* WelcomeScreenPresenter.swift in Sources */,
 				55A274432C592572009B0334 /* ApiRequestEnum.swift in Sources */,
+				5509D7BB2C5931A700B326C6 /* SplashInteractor.swift in Sources */,
+				5509D7B52C5930AF00B326C6 /* WelcomeScreenVC.swift in Sources */,
 				55A274202C58CAEF009B0334 /* SceneDelegate.swift in Sources */,
 				55A2743B2C58CDA3009B0334 /* BaseViewController.swift in Sources */,
 				55A274382C58CD0D009B0334 /* SplashPresenter.swift in Sources */,

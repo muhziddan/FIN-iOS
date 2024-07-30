@@ -7,11 +7,15 @@
 
 import UIKit
 
-class SplashVC: BaseViewController {
+protocol SplashVCProtocol: AnyObject {
+    func assignState(state: ApiState)
+}
+
+class SplashVC: BaseViewController, SplashVCProtocol {
     
-    private var presenter: SplashPresenter
+    private let presenter: SplashPresenterProtocol
     
-    init(presenter: SplashPresenter) {
+    init(presenter: SplashPresenterProtocol) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,6 +44,10 @@ class SplashVC: BaseViewController {
         case .success:
             print("success state on view")
         }
+    }
+    
+    func setupView() {
+        print("setup view!")
     }
     
 }

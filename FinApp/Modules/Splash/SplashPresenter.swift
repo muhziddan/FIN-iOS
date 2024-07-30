@@ -7,13 +7,19 @@
 
 import UIKit
 
-class SplashPresenter: BasePresenter {
+protocol SplashPresenterProtocol: AnyObject {
+    func fetch()
+}
+
+class SplashPresenter: BasePresenter, SplashPresenterProtocol {
     
     private let router: SplashRouter
-    weak var view: SplashVC?
+    private let interactor: SplashInteractorProtocol
+    weak var view: SplashVCProtocol?
     
-    init(router: SplashRouter) {
+    init(router: SplashRouter, interactor: SplashInteractorProtocol) {
         self.router = router
+        self.interactor = interactor
         super.init()
         
         $apiState.sink { [weak self] state in
@@ -27,13 +33,20 @@ class SplashPresenter: BasePresenter {
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        print("fetch data")
-        dispatchGroup.leave()
+        interactor.fetchBinding { dataResponse in
+            print("finaly appear")
+            print(dataResponse ?? "")
+            dispatchGroup.leave()
+        }
         
         dispatchGroup.notify(queue: .main) { [weak self] in
             guard let self = self else { return }
             self.apiState = .success
         }
+    }
+    
+    func calculateData() {
+        print("calculate!!!")
     }
     
 }

@@ -14,6 +14,10 @@
 		555F75312C5A686700B8D955 /* WelcomeScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75302C5A686700B8D955 /* WelcomeScreenInteractor.swift */; };
 		555F75342C5A730D00B8D955 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75332C5A730D00B8D955 /* UIView+.swift */; };
 		555F75372C5C8BD800B8D955 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75362C5C8BD800B8D955 /* CircleButton.swift */; };
+		555F753A2C5CE3DF00B8D955 /* LoginAndSignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75392C5CE3DF00B8D955 /* LoginAndSignupVC.swift */; };
+		555F753C2C5CE3FE00B8D955 /* LoginAndSignupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F753B2C5CE3FE00B8D955 /* LoginAndSignupRouter.swift */; };
+		555F753E2C5CE40900B8D955 /* LoginAndSignupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F753D2C5CE40900B8D955 /* LoginAndSignupInteractor.swift */; };
+		555F75402C5CE41700B8D955 /* LoginAndSignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F753F2C5CE41700B8D955 /* LoginAndSignupPresenter.swift */; };
 		55A2741E2C58CAEF009B0334 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2741D2C58CAEF009B0334 /* AppDelegate.swift */; };
 		55A274202C58CAEF009B0334 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2741F2C58CAEF009B0334 /* SceneDelegate.swift */; };
 		55A274272C58CAF1009B0334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A274262C58CAF1009B0334 /* Assets.xcassets */; };
@@ -33,6 +37,10 @@
 		555F75302C5A686700B8D955 /* WelcomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenInteractor.swift; sourceTree = "<group>"; };
 		555F75332C5A730D00B8D955 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		555F75362C5C8BD800B8D955 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		555F75392C5CE3DF00B8D955 /* LoginAndSignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupVC.swift; sourceTree = "<group>"; };
+		555F753B2C5CE3FE00B8D955 /* LoginAndSignupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupRouter.swift; sourceTree = "<group>"; };
+		555F753D2C5CE40900B8D955 /* LoginAndSignupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupInteractor.swift; sourceTree = "<group>"; };
+		555F753F2C5CE41700B8D955 /* LoginAndSignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignupPresenter.swift; sourceTree = "<group>"; };
 		55A2741A2C58CAEF009B0334 /* FinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A2741D2C58CAEF009B0334 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A2741F2C58CAEF009B0334 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +93,17 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		555F75382C5CE31700B8D955 /* LoginAndSignup */ = {
+			isa = PBXGroup;
+			children = (
+				555F753B2C5CE3FE00B8D955 /* LoginAndSignupRouter.swift */,
+				555F753F2C5CE41700B8D955 /* LoginAndSignupPresenter.swift */,
+				555F75392C5CE3DF00B8D955 /* LoginAndSignupVC.swift */,
+				555F753D2C5CE40900B8D955 /* LoginAndSignupInteractor.swift */,
+			);
+			path = LoginAndSignup;
+			sourceTree = "<group>";
+		};
 		55A274112C58CAEF009B0334 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +136,7 @@
 		55A274312C58CBF0009B0334 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				555F75382C5CE31700B8D955 /* LoginAndSignup */,
 				5509D7B32C59306C00B326C6 /* WelcomeScreen */,
 				55A274322C58CC02009B0334 /* Splash */,
 			);
@@ -127,8 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				55A274352C58CCFD009B0334 /* SplashRouter.swift */,
-				55A274332C58CCF4009B0334 /* SplashVC.swift */,
 				55A274372C58CD0D009B0334 /* SplashPresenter.swift */,
+				55A274332C58CCF4009B0334 /* SplashVC.swift */,
 				5509D7BA2C5931A700B326C6 /* SplashInteractor.swift */,
 			);
 			path = Splash;
@@ -230,18 +250,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555F753E2C5CE40900B8D955 /* LoginAndSignupInteractor.swift in Sources */,
 				55A274362C58CCFD009B0334 /* SplashRouter.swift in Sources */,
 				5509D7B72C5930B900B326C6 /* WelcomeScreenRouter.swift in Sources */,
 				555F75342C5A730D00B8D955 /* UIView+.swift in Sources */,
 				55A2743D2C58CDAD009B0334 /* BasePresenter.swift in Sources */,
+				555F753C2C5CE3FE00B8D955 /* LoginAndSignupRouter.swift in Sources */,
 				55A274342C58CCF4009B0334 /* SplashVC.swift in Sources */,
 				55A2741E2C58CAEF009B0334 /* AppDelegate.swift in Sources */,
 				5509D7B92C5930C600B326C6 /* WelcomeScreenPresenter.swift in Sources */,
 				555F75312C5A686700B8D955 /* WelcomeScreenInteractor.swift in Sources */,
+				555F75402C5CE41700B8D955 /* LoginAndSignupPresenter.swift in Sources */,
 				55A274432C592572009B0334 /* ApiRequestEnum.swift in Sources */,
 				5509D7BB2C5931A700B326C6 /* SplashInteractor.swift in Sources */,
 				5509D7B52C5930AF00B326C6 /* WelcomeScreenVC.swift in Sources */,
 				55A274202C58CAEF009B0334 /* SceneDelegate.swift in Sources */,
+				555F753A2C5CE3DF00B8D955 /* LoginAndSignupVC.swift in Sources */,
 				55A2743B2C58CDA3009B0334 /* BaseViewController.swift in Sources */,
 				555F75372C5C8BD800B8D955 /* CircleButton.swift in Sources */,
 				55A274382C58CD0D009B0334 /* SplashPresenter.swift in Sources */,

@@ -38,7 +38,7 @@ class WelcomeScreenVC: BaseViewController, WelcomeScreenVCProtocol {
         setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         view.addSubview([backgroundView])
         backgroundView.constraints(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
         backgroundView.backgroundColor = .white
@@ -46,25 +46,25 @@ class WelcomeScreenVC: BaseViewController, WelcomeScreenVCProtocol {
         setupMainSubview()
     }
     
-    func setupMainSubview() {
+    private func setupMainSubview() {
         setupBottomView()
         setupWelcomeImage()
         setupBackButton()
     }
     
-    func setupWelcomeImage() {
+    private func setupWelcomeImage() {
         welcomeImage.constraints(top: backgroundView.topAnchor, leading: backgroundView.leadingAnchor, bottom: bottomView.topAnchor, trailing: backgroundView.trailingAnchor)
         welcomeImage.image = UIImage(named: "welcome1")
     }
     
-    func setupBottomView() {
+    private func setupBottomView() {
         bottomView.constraints(leading: backgroundView.leadingAnchor, bottom: backgroundView.bottomAnchor, trailing: backgroundView.trailingAnchor, height: view.frame.size.height * 5 / 12)
         bottomView.backgroundColor = .white
         bottomView.addSubview([titleLabel, subtitleLabel, pageControl, nextButton])
         setupBottomSubview()
     }
     
-    func setupBackButton() {
+    private func setupBackButton() {
         backButton.constraints(top: backgroundView.safeAreaLayoutGuide.topAnchor, leading: backgroundView.leadingAnchor, height: 40, width: 40, padding: .init(top: 0, left: 32, bottom: 0, right: 0))
         backButton.isHidden = true
         backButton.tintColor = .black
@@ -73,28 +73,28 @@ class WelcomeScreenVC: BaseViewController, WelcomeScreenVCProtocol {
         backButton.addTarget(self, action: #selector(handleBackButton), for: .touchUpInside)
     }
     
-    func setupBottomSubview() {
+    private func setupBottomSubview() {
         setuptitleLabel()
         setupSubtitleLabel()
         setupPageControl()
         setupNextButton()
     }
     
-    func setuptitleLabel() {
+    private func setuptitleLabel() {
         titleLabel.constraints(top: bottomView.topAnchor, leading: bottomView.leadingAnchor, trailing: bottomView.trailingAnchor, height: 48, padding: .init(top: 56, left: 72, bottom: 0, right: 72))
         titleLabel.numberOfLines = 0
         titleLabel.text = "Transfer money faster than ever before"
         titleLabel.textColor = .black
     }
     
-    func setupSubtitleLabel() {
+    private func setupSubtitleLabel() {
         subtitleLabel.constraints(top: titleLabel.bottomAnchor, leading: bottomView.leadingAnchor, trailing: bottomView.trailingAnchor, height: 48, padding: .init(top: 16, left: 72, bottom: 0, right: 72))
         subtitleLabel.numberOfLines = 0
         subtitleLabel.text = "Set the amount you need, select a person and send the transaction in one click"
         subtitleLabel.textColor = .black
     }
     
-    func setupPageControl() {
+    private func setupPageControl() {
         pageControl.constraints(top: subtitleLabel.bottomAnchor,leading: bottomView.leadingAnchor, trailing: bottomView.trailingAnchor, padding: .init(top: 32, left: 72, bottom: 0, right: 72))
         pageControl.currentPageIndicatorTintColor = .blue
         pageControl.pageIndicatorTintColor = .lightGray
@@ -102,7 +102,7 @@ class WelcomeScreenVC: BaseViewController, WelcomeScreenVCProtocol {
         pageControl.currentPage = pageIndex
     }
     
-    func setupNextButton() {
+    private func setupNextButton() {
         nextButton.constraints(bottom: bottomView.safeAreaLayoutGuide.bottomAnchor, centerX: (bottomView.centerXAnchor, 0), height: 56, width: 56)
         nextButton.tintColor = .white
         nextButton.backgroundColor = .blue
@@ -134,9 +134,14 @@ extension WelcomeScreenVC {
             print("page final")
         case 3:
             pageIndex -= 1
+            navigateToLoginAndSignup()
         default: break
         }
         pageControl.currentPage = pageIndex
+    }
+    
+    private func navigateToLoginAndSignup() {
+        presenter.navigateToLoginAndSignup(navigation: navigationController ?? UINavigationController())
     }
     
 }

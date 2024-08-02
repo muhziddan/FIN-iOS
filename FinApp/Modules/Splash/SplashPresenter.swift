@@ -15,12 +15,10 @@ protocol SplashPresenterProtocol: AnyObject {
 class SplashPresenter: BasePresenter, SplashPresenterProtocol {
     
     private let router: SplashRouter
-    private let interactor: SplashInteractorProtocol
     weak var view: SplashVCProtocol?
     
-    init(router: SplashRouter, interactor: SplashInteractorProtocol) {
+    init(router: SplashRouter) {
         self.router = router
-        self.interactor = interactor
         super.init()
         
         $apiState.sink { [weak self] state in
@@ -34,7 +32,7 @@ class SplashPresenter: BasePresenter, SplashPresenterProtocol {
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        interactor.fetchBinding { dataResponse in
+        SplashInteractor.fetchBinding { dataResponse in
             dispatchGroup.leave()
         }
         

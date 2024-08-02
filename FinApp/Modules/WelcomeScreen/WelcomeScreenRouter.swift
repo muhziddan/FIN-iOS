@@ -5,19 +5,21 @@
 //  Created by Muhammad Ziddan on 30/07/24.
 //
 
-import Foundation
+import UIKit
 
 struct WelcomeScreenRouter {
     
     static func showView() -> WelcomeScreenVC {
         let router = WelcomeScreenRouter()
-        let interactor = WelcomeScreenInteractor()
-        let presenter = WelcomeScreenPresenter(router: router, interactor: interactor)
+        let presenter = WelcomeScreenPresenter(router: router)
         let view = WelcomeScreenVC(presenter: presenter)
         presenter.view = view
-        interactor.presenter = presenter
         
         return view
+    }
+    
+    func navigateToLoginAndSignup(navigation: UINavigationController) {
+        navigation.pushViewController(LoginAndSignupRouter.showView(), animated: true)
     }
     
 }

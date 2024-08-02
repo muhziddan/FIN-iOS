@@ -7,12 +7,6 @@
 
 import Foundation
 
-protocol WelcomeScreenInteractorProtocol: AnyObject {
-    
-}
-
-class WelcomeScreenInteractor: WelcomeScreenInteractorProtocol {
-    
-    weak var presenter: WelcomeScreenPresenter?
+struct WelcomeScreenInteractor {
     
 }

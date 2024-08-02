@@ -7,15 +7,9 @@
 
 import Foundation
 
-protocol SplashInteractorProtocol: AnyObject {
-    func fetchBinding(callback: @escaping (String?) -> ())
-}
-
-class SplashInteractor: SplashInteractorProtocol {
+struct SplashInteractor {
     
-    weak var presenter: SplashPresenterProtocol?
-    
-    func fetchBinding(callback: @escaping (String?) -> ()) {
+    static func fetchBinding(callback: @escaping (String?) -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             callback("data from binding")
         }

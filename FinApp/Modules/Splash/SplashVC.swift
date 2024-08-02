@@ -46,11 +46,7 @@ class SplashVC: BaseViewController, SplashVCProtocol {
         }
     }
     
-    func setupView() {
-        print("setup view!")
-    }
-    
-    func navigateToWelcomeScreen() {
+    private func navigateToWelcomeScreen() {
         presenter.navigateToWelcomeScreen(navigation: navigationController ?? UINavigationController())
     }
     

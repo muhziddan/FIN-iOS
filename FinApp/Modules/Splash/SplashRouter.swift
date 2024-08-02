@@ -5,7 +5,7 @@
 //  Created by Muhammad Ziddan on 30/07/24.
 //
 
-import Foundation
+import UIKit
 
 struct SplashRouter {
     
@@ -18,6 +18,10 @@ struct SplashRouter {
         interactor.presenter = presenter
         
         return view
+    }
+    
+    func navigateToWelcomeScreen(navigation: UINavigationController?) {
+        navigation?.pushViewController(WelcomeScreenRouter.showView(), animated: true)
     }
     
 }

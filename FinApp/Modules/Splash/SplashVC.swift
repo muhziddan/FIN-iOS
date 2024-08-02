@@ -42,12 +42,16 @@ class SplashVC: BaseViewController, SplashVCProtocol {
         case .failure:
             print("failure state on view")
         case .success:
-            print("success state on view")
+            navigateToWelcomeScreen()
         }
     }
     
     func setupView() {
         print("setup view!")
+    }
+    
+    func navigateToWelcomeScreen() {
+        presenter.navigateToWelcomeScreen(navigation: navigationController ?? UINavigationController())
     }
     
 }

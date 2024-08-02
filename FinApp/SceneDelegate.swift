@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let navigation = UINavigationController()
-//        navigation.isna
+        navigation.isNavigationBarHidden = true
         navigation.pushViewController(SplashRouter.showView(), animated: true)
         window.rootViewController = navigation
         window.makeKeyAndVisible()

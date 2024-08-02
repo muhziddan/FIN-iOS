@@ -9,6 +9,7 @@ import UIKit
 
 protocol SplashPresenterProtocol: AnyObject {
     func fetch()
+    func navigateToWelcomeScreen(navigation: UINavigationController)
 }
 
 class SplashPresenter: BasePresenter, SplashPresenterProtocol {
@@ -34,8 +35,6 @@ class SplashPresenter: BasePresenter, SplashPresenterProtocol {
         
         dispatchGroup.enter()
         interactor.fetchBinding { dataResponse in
-            print("finaly appear")
-            print(dataResponse ?? "")
             dispatchGroup.leave()
         }
         
@@ -45,8 +44,8 @@ class SplashPresenter: BasePresenter, SplashPresenterProtocol {
         }
     }
     
-    func calculateData() {
-        print("calculate!!!")
+    func navigateToWelcomeScreen(navigation: UINavigationController) {
+        router.navigateToWelcomeScreen(navigation: navigation)
     }
     
 }

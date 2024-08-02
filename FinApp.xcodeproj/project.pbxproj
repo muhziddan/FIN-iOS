@@ -11,6 +11,9 @@
 		5509D7B72C5930B900B326C6 /* WelcomeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7B62C5930B900B326C6 /* WelcomeScreenRouter.swift */; };
 		5509D7B92C5930C600B326C6 /* WelcomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7B82C5930C600B326C6 /* WelcomeScreenPresenter.swift */; };
 		5509D7BB2C5931A700B326C6 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7BA2C5931A700B326C6 /* SplashInteractor.swift */; };
+		555F75312C5A686700B8D955 /* WelcomeScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75302C5A686700B8D955 /* WelcomeScreenInteractor.swift */; };
+		555F75342C5A730D00B8D955 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75332C5A730D00B8D955 /* UIView+.swift */; };
+		555F75372C5C8BD800B8D955 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75362C5C8BD800B8D955 /* CircleButton.swift */; };
 		55A2741E2C58CAEF009B0334 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2741D2C58CAEF009B0334 /* AppDelegate.swift */; };
 		55A274202C58CAEF009B0334 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2741F2C58CAEF009B0334 /* SceneDelegate.swift */; };
 		55A274272C58CAF1009B0334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A274262C58CAF1009B0334 /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 		5509D7B62C5930B900B326C6 /* WelcomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenRouter.swift; sourceTree = "<group>"; };
 		5509D7B82C5930C600B326C6 /* WelcomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenPresenter.swift; sourceTree = "<group>"; };
 		5509D7BA2C5931A700B326C6 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		555F75302C5A686700B8D955 /* WelcomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenInteractor.swift; sourceTree = "<group>"; };
+		555F75332C5A730D00B8D955 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		555F75362C5C8BD800B8D955 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		55A2741A2C58CAEF009B0334 /* FinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A2741D2C58CAEF009B0334 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A2741F2C58CAEF009B0334 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,11 +60,29 @@
 		5509D7B32C59306C00B326C6 /* WelcomeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				5509D7B42C5930AF00B326C6 /* WelcomeScreenVC.swift */,
+				555F75352C5C8BA400B8D955 /* Components */,
 				5509D7B62C5930B900B326C6 /* WelcomeScreenRouter.swift */,
 				5509D7B82C5930C600B326C6 /* WelcomeScreenPresenter.swift */,
+				5509D7B42C5930AF00B326C6 /* WelcomeScreenVC.swift */,
+				555F75302C5A686700B8D955 /* WelcomeScreenInteractor.swift */,
 			);
 			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		555F75322C5A72E000B8D955 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				555F75332C5A730D00B8D955 /* UIView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		555F75352C5C8BA400B8D955 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				555F75362C5C8BD800B8D955 /* CircleButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		55A274112C58CAEF009B0334 = {
@@ -122,6 +146,7 @@
 		55A2743E2C592505009B0334 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				555F75322C5A72E000B8D955 /* Extension */,
 				55A274412C592543009B0334 /* Network */,
 				55A274392C58CD70009B0334 /* BaseModules */,
 			);
@@ -207,15 +232,18 @@
 			files = (
 				55A274362C58CCFD009B0334 /* SplashRouter.swift in Sources */,
 				5509D7B72C5930B900B326C6 /* WelcomeScreenRouter.swift in Sources */,
+				555F75342C5A730D00B8D955 /* UIView+.swift in Sources */,
 				55A2743D2C58CDAD009B0334 /* BasePresenter.swift in Sources */,
 				55A274342C58CCF4009B0334 /* SplashVC.swift in Sources */,
 				55A2741E2C58CAEF009B0334 /* AppDelegate.swift in Sources */,
 				5509D7B92C5930C600B326C6 /* WelcomeScreenPresenter.swift in Sources */,
+				555F75312C5A686700B8D955 /* WelcomeScreenInteractor.swift in Sources */,
 				55A274432C592572009B0334 /* ApiRequestEnum.swift in Sources */,
 				5509D7BB2C5931A700B326C6 /* SplashInteractor.swift in Sources */,
 				5509D7B52C5930AF00B326C6 /* WelcomeScreenVC.swift in Sources */,
 				55A274202C58CAEF009B0334 /* SceneDelegate.swift in Sources */,
 				55A2743B2C58CDA3009B0334 /* BaseViewController.swift in Sources */,
+				555F75372C5C8BD800B8D955 /* CircleButton.swift in Sources */,
 				55A274382C58CD0D009B0334 /* SplashPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

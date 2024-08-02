@@ -96,12 +96,20 @@
 		555F75382C5CE31700B8D955 /* LoginAndSignup */ = {
 			isa = PBXGroup;
 			children = (
+				555F75412C5D3B9A00B8D955 /* Components */,
 				555F753B2C5CE3FE00B8D955 /* LoginAndSignupRouter.swift */,
 				555F753F2C5CE41700B8D955 /* LoginAndSignupPresenter.swift */,
 				555F75392C5CE3DF00B8D955 /* LoginAndSignupVC.swift */,
 				555F753D2C5CE40900B8D955 /* LoginAndSignupInteractor.swift */,
 			);
 			path = LoginAndSignup;
+			sourceTree = "<group>";
+		};
+		555F75412C5D3B9A00B8D955 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		55A274112C58CAEF009B0334 = {

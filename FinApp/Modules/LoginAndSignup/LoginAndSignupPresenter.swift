@@ -22,6 +22,7 @@ class LoginAndSignupPresenter: BasePresenter {
         
         $apiState.sink { [weak self] state in
             guard let self = self else { return }
+            self.view?.assignState(state: state)
         }.store(in: &cancellableBag)
     }
     

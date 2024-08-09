@@ -9,15 +9,17 @@ import UIKit
 
 protocol WelcomeScreenPresenterProtocol: AnyObject {
     func navigateToLoginAndSignup(navigation: UINavigationController)
+    func navigateToSplash(navigation: UINavigationController)
+    func fetch()
 }
 
 class WelcomeScreenPresenter: BasePresenter, WelcomeScreenPresenterProtocol {
     
-    private let router: WelcomeScreenRouter
+    private let interactor: WelcomeScreenInteractorProtocol
     weak var view: WelcomeScreenVCProtocol?
     
-    init(router: WelcomeScreenRouter) {
-        self.router = router
+    init(interactor: WelcomeScreenInteractorProtocol) {
+        self.interactor = interactor
         super.init()
         
         $apiState.sink { [weak self] state in
@@ -26,8 +28,27 @@ class WelcomeScreenPresenter: BasePresenter, WelcomeScreenPresenterProtocol {
         }.store(in: &cancellableBag)
     }
     
+    func fetch() {
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        interactor.fetchWelcomeData { response in
+            guard let response = response else { return }
+            print("data in presenter: \(response)")
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            print("done fetcing!")
+        }
+    }
+    
     func navigateToLoginAndSignup(navigation: UINavigationController) {
-        router.navigateToLoginAndSignup(navigation: navigation)
+        WelcomeScreenRouter.navigateToLoginAndSignup(navigation: navigation)
+    }
+    
+    func navigateToSplash(navigation: UINavigationController) {
+        WelcomeScreenRouter.navigateToSplash(navigation: navigation)
     }
     
 }

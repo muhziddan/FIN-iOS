@@ -7,6 +7,12 @@
 
 import Foundation
 
-struct LoginAndSignupInteractor {
+protocol LoginAndSignupInteractorProtocol {}
+
+class LoginAndSignupInteractor: BaseInteractor, LoginAndSignupInteractorProtocol {
+    
+//    func deleteData() {
+//        CacheManager.shared.entity.remove
+//    }
     
 }

@@ -10,16 +10,20 @@ import UIKit
 struct WelcomeScreenRouter {
     
     static func showView() -> WelcomeScreenVC {
-        let router = WelcomeScreenRouter()
-        let presenter = WelcomeScreenPresenter(router: router)
+        let interactor = WelcomeScreenInteractor()
+        let presenter = WelcomeScreenPresenter(interactor: interactor)
         let view = WelcomeScreenVC(presenter: presenter)
         presenter.view = view
         
         return view
     }
     
-    func navigateToLoginAndSignup(navigation: UINavigationController) {
+    static func navigateToLoginAndSignup(navigation: UINavigationController) {
         navigation.pushViewController(LoginAndSignupRouter.showView(), animated: true)
+    }
+    
+    static func navigateToSplash(navigation: UINavigationController) {
+        navigation.popViewController(animated: true)
     }
     
 }

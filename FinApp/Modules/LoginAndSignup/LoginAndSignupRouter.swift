@@ -10,8 +10,8 @@ import Foundation
 struct LoginAndSignupRouter {
     
     static func showView() -> LoginAndSignupVC {
-        let router = LoginAndSignupRouter()
-        let presenter = LoginAndSignupPresenter(router: router)
+        let interactor = LoginAndSignupInteractor()
+        let presenter = LoginAndSignupPresenter(interactor: interactor)
         let view = LoginAndSignupVC(presenter: presenter)
         presenter.view = view
         

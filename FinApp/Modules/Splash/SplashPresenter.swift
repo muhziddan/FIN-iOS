@@ -14,11 +14,11 @@ protocol SplashPresenterProtocol: AnyObject {
 
 class SplashPresenter: BasePresenter, SplashPresenterProtocol {
     
-    private let router: SplashRouter
     weak var view: SplashVCProtocol?
+    private let interactor: SplashInteractorProtocol
     
-    init(router: SplashRouter) {
-        self.router = router
+    init(interactor: SplashInteractor) {
+        self.interactor = interactor
         super.init()
         
         $apiState.sink { [weak self] state in
@@ -32,7 +32,8 @@ class SplashPresenter: BasePresenter, SplashPresenterProtocol {
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        SplashInteractor.fetchBinding { dataResponse in
+        interactor.fetchBinding { dataResponse in
+            print("response from presenter: \(String(describing: dataResponse))")
             dispatchGroup.leave()
         }
         
@@ -43,7 +44,7 @@ class SplashPresenter: BasePresenter, SplashPresenterProtocol {
     }
     
     func navigateToWelcomeScreen(navigation: UINavigationController) {
-        router.navigateToWelcomeScreen(navigation: navigation)
+        SplashRouter.navigateToWelcomeScreen(navigation: navigation)
     }
     
 }

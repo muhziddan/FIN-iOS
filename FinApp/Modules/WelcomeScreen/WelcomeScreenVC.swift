@@ -38,6 +38,10 @@ class WelcomeScreenVC: BaseViewController, WelcomeScreenVCProtocol {
         setupView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.fetch()
+    }
+    
     private func setupView() {
         view.addSubview([backgroundView])
         backgroundView.constraints(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
@@ -65,8 +69,8 @@ class WelcomeScreenVC: BaseViewController, WelcomeScreenVCProtocol {
     }
     
     private func setupBackButton() {
-        backButton.constraints(top: backgroundView.safeAreaLayoutGuide.topAnchor, leading: backgroundView.leadingAnchor, height: 40, width: 40, padding: .init(top: 0, left: 32, bottom: 0, right: 0))
-        backButton.isHidden = true
+        backButton.constraints(top: backgroundView.safeAreaLayoutGuide.topAnchor, leading: backgroundView.leadingAnchor, width: 40, height: 40, padding: .init(top: 0, left: 32, bottom: 0, right: 0))
+        backButton.isHidden = false
         backButton.tintColor = .black
         backButton.backgroundColor = .white
         backButton.setImage(UIImage(systemName: "arrow.backward"), for: .normal)
@@ -103,7 +107,7 @@ class WelcomeScreenVC: BaseViewController, WelcomeScreenVCProtocol {
     }
     
     private func setupNextButton() {
-        nextButton.constraints(bottom: bottomView.safeAreaLayoutGuide.bottomAnchor, centerX: (bottomView.centerXAnchor, 0), height: 56, width: 56)
+        nextButton.constraints(bottom: bottomView.safeAreaLayoutGuide.bottomAnchor, centerX: (bottomView.centerXAnchor, 0), width: 56, height: 56)
         nextButton.tintColor = .white
         nextButton.backgroundColor = .blue
         nextButton.setImage(UIImage(systemName: "arrow.forward"), for: .normal)
@@ -115,7 +119,10 @@ class WelcomeScreenVC: BaseViewController, WelcomeScreenVCProtocol {
 extension WelcomeScreenVC {
     
     @objc private func handleBackButton() {
-        pageIndex -= 1
+        if pageIndex != 0 {
+            pageIndex -= 1
+        }
+        
         pageHandler()
     }
     
@@ -127,7 +134,8 @@ extension WelcomeScreenVC {
     private func pageHandler() {
         switch pageIndex  {
         case 0:
-            backButton.isHidden = true
+//            backButton.isHidden = false
+            navigateToSplash()
         case 1:
             backButton.isHidden = false
         case 2:
@@ -142,6 +150,10 @@ extension WelcomeScreenVC {
     
     private func navigateToLoginAndSignup() {
         presenter.navigateToLoginAndSignup(navigation: navigationController ?? UINavigationController())
+    }
+    
+    private func navigateToSplash() {
+        presenter.navigateToSplash(navigation: navigationController ?? UINavigationController())
     }
     
 }

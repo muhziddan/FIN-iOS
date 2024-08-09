@@ -11,6 +11,10 @@
 		5509D7B72C5930B900B326C6 /* WelcomeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7B62C5930B900B326C6 /* WelcomeScreenRouter.swift */; };
 		5509D7B92C5930C600B326C6 /* WelcomeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7B82C5930C600B326C6 /* WelcomeScreenPresenter.swift */; };
 		5509D7BB2C5931A700B326C6 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509D7BA2C5931A700B326C6 /* SplashInteractor.swift */; };
+		5526C6012C63445A0011363F /* SplashEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526C6002C63445A0011363F /* SplashEntity.swift */; };
+		5526C6032C6345290011363F /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526C6022C6345290011363F /* BaseInteractor.swift */; };
+		5526C6082C63AE270011363F /* WelcomeScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526C6072C63AE270011363F /* WelcomeScreenEntity.swift */; };
+		5526C60D2C63C35B0011363F /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5526C60C2C63C35B0011363F /* CacheManager.swift */; };
 		555F75312C5A686700B8D955 /* WelcomeScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75302C5A686700B8D955 /* WelcomeScreenInteractor.swift */; };
 		555F75342C5A730D00B8D955 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75332C5A730D00B8D955 /* UIView+.swift */; };
 		555F75372C5C8BD800B8D955 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555F75362C5C8BD800B8D955 /* CircleButton.swift */; };
@@ -34,6 +38,10 @@
 		5509D7B62C5930B900B326C6 /* WelcomeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenRouter.swift; sourceTree = "<group>"; };
 		5509D7B82C5930C600B326C6 /* WelcomeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenPresenter.swift; sourceTree = "<group>"; };
 		5509D7BA2C5931A700B326C6 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		5526C6002C63445A0011363F /* SplashEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashEntity.swift; sourceTree = "<group>"; };
+		5526C6022C6345290011363F /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		5526C6072C63AE270011363F /* WelcomeScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenEntity.swift; sourceTree = "<group>"; };
+		5526C60C2C63C35B0011363F /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		555F75302C5A686700B8D955 /* WelcomeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenInteractor.swift; sourceTree = "<group>"; };
 		555F75332C5A730D00B8D955 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		555F75362C5C8BD800B8D955 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
@@ -73,8 +81,17 @@
 				5509D7B82C5930C600B326C6 /* WelcomeScreenPresenter.swift */,
 				5509D7B42C5930AF00B326C6 /* WelcomeScreenVC.swift */,
 				555F75302C5A686700B8D955 /* WelcomeScreenInteractor.swift */,
+				5526C6072C63AE270011363F /* WelcomeScreenEntity.swift */,
 			);
 			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		5526C6092C63C27A0011363F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5526C60C2C63C35B0011363F /* CacheManager.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		555F75322C5A72E000B8D955 /* Extension */ = {
@@ -158,6 +175,7 @@
 				55A274372C58CD0D009B0334 /* SplashPresenter.swift */,
 				55A274332C58CCF4009B0334 /* SplashVC.swift */,
 				5509D7BA2C5931A700B326C6 /* SplashInteractor.swift */,
+				5526C6002C63445A0011363F /* SplashEntity.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -167,6 +185,7 @@
 			children = (
 				55A2743A2C58CDA3009B0334 /* BaseViewController.swift */,
 				55A2743C2C58CDAD009B0334 /* BasePresenter.swift */,
+				5526C6022C6345290011363F /* BaseInteractor.swift */,
 			);
 			path = BaseModules;
 			sourceTree = "<group>";
@@ -174,6 +193,7 @@
 		55A2743E2C592505009B0334 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5526C6092C63C27A0011363F /* Helper */,
 				555F75322C5A72E000B8D955 /* Extension */,
 				55A274412C592543009B0334 /* Network */,
 				55A274392C58CD70009B0334 /* BaseModules */,
@@ -264,9 +284,12 @@
 				555F75342C5A730D00B8D955 /* UIView+.swift in Sources */,
 				55A2743D2C58CDAD009B0334 /* BasePresenter.swift in Sources */,
 				555F753C2C5CE3FE00B8D955 /* LoginAndSignupRouter.swift in Sources */,
+				5526C60D2C63C35B0011363F /* CacheManager.swift in Sources */,
 				55A274342C58CCF4009B0334 /* SplashVC.swift in Sources */,
+				5526C6082C63AE270011363F /* WelcomeScreenEntity.swift in Sources */,
 				55A2741E2C58CAEF009B0334 /* AppDelegate.swift in Sources */,
 				5509D7B92C5930C600B326C6 /* WelcomeScreenPresenter.swift in Sources */,
+				5526C6012C63445A0011363F /* SplashEntity.swift in Sources */,
 				555F75312C5A686700B8D955 /* WelcomeScreenInteractor.swift in Sources */,
 				555F75402C5CE41700B8D955 /* LoginAndSignupPresenter.swift in Sources */,
 				55A274432C592572009B0334 /* ApiRequestEnum.swift in Sources */,
@@ -277,6 +300,7 @@
 				55A2743B2C58CDA3009B0334 /* BaseViewController.swift in Sources */,
 				555F75372C5C8BD800B8D955 /* CircleButton.swift in Sources */,
 				55A274382C58CD0D009B0334 /* SplashPresenter.swift in Sources */,
+				5526C6032C6345290011363F /* BaseInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

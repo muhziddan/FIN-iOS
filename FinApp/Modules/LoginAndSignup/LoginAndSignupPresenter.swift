@@ -13,11 +13,11 @@ protocol LoginAndSignupPresenterProtocol: AnyObject {
 
 class LoginAndSignupPresenter: BasePresenter {
     
-    private let router: LoginAndSignupRouter
+    private let interactor: LoginAndSignupInteractorProtocol
     weak var view: LoginAndSignupVCProtocol?
     
-    init(router: LoginAndSignupRouter) {
-        self.router = router
+    init(interactor: LoginAndSignupInteractorProtocol) {
+        self.interactor = interactor
         super.init()
         
         $apiState.sink { [weak self] state in
